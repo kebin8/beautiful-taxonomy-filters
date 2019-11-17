@@ -50,6 +50,8 @@
 			args.dir = 'rtl';
 		}
 
+		args.dropdownAutoWidth = true;
+
 		var select2;
 		if ( btf_localization.disable_fuzzy == '1' ) {
 			$.fn.select2.amd.require(['select2/compat/matcher'], function (oldMatcher) {
