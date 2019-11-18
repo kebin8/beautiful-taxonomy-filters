@@ -61,6 +61,7 @@ class Beautiful_Taxonomy_Filters_Rewrite_Rules {
 			// Loop through each taxonomy and add it to our rewrite.
 			$query_var = $taxonomy->query_var;
 			$rewrite_slug = ( ! empty( $taxonomy->rewrite['slug'] ) ) ? $taxonomy->rewrite['slug'] : $query_var;
+			$rewrite_slug = str_replace("/", "", $rewrite_slug);
 
 			$new_rewrite_rule .= sprintf( '(?:/%s/([^/]+))?', $rewrite_slug );
 			$new_query_string .= sprintf( '&%s=%s', $query_var, $wp_rewrite->preg_index( $n ) );
